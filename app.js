@@ -33,12 +33,12 @@
     },
     {
       title: "Paso 7: Subir a Google Drive",
-      desc: "Sube los archivos de Excel a la carpeta 'Procesamiento' en Google Drive.",
+    desc: "Sube los archivos de Excel a la carpeta 'Procesamiento' en Google Drive. Después de subir los archivos, borra la carpeta llamada 'Listo' que está en ese mismo Drive (puedes verla en la captura de pantalla de este paso).",
       links: [{ label: "Carpeta de Procesamiento (Drive)", href: "https://drive.google.com/drive/folders/1y4mIhIpoTxMXZOsJ7IvTKFnNRZtwI_tG?usp=sharing" }]
     },
     {
       title: "Paso 8: Preparar la Hoja de Cálculo",
-      desc: "En la hoja 'Procesar Top 20', elimina 'Listo', limpia 'P1' y borra desde 'A2:B2' en 'Historial'.",
+    desc: "En la hoja 'Procesar Top 20', limpia 'P1' y borra desde 'A2:B2' en 'Historial'.",
       links: []
     },
     {

@@ -97,6 +97,7 @@ body{
 .alert{
   margin-top:16px;padding:12px;border-radius:8px;
   background:#2b0000;color:#fff;border:1px solid #ff4d4d;
+  margin-bottom:32px;
 }
 
 /* Highlight animation (only text color) */

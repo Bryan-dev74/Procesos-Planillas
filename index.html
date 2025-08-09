@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Procesos Planilla</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="ico.png" type="image/x-icon">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+  <span class="dot"></span>
+  <h1 class="typewriter"><span id="typeText"></span><span class="cursor">|</span></h1>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <nav>
+        <h2>Procesos</h2>
+        <ul id="processList">
+          <li class="active" data-process="top20">
+            <span class="process-name">Procesar archivos Top20</span>
+          </li>
+          <li class="disabled" style="opacity:0.5; pointer-events:none;">
+            <span class="process-name">Registro de dados</span>
+            <span style="font-size:11px; color:var(--muted); margin-left:8px;">próximamente</span>
+          </li>
+        </ul>
+      </nav>
+      <div class="tips">
+        <h3>Atajos</h3>
+        <ul>
+          <li><kbd>←</kbd> paso anterior</li>
+          <li><kbd>→</kbd> siguiente paso</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section class="intro-card">
+        <h2>Procesar archivos Top20</h2>
+        <div class="cta-row">
+          <button id="startGuide" class="primary">Iniciar guía</button>
+        </div>
+      </section>
+
+      <!-- Modal para imagen ampliada -->
+      <div id="imgModal" style="display:none;position:fixed;z-index:1000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
+        <img id="modalImg" src="" alt="Captura ampliada" style="max-width:90vw;max-height:90vh;border-radius:16px;box-shadow:0 0 40px #000;">
+      </div>
+
+      <section class="stepper" id="stepper" aria-live="polite">
+        <div class="stepper-progress">
+          <div class="bar"><span id="progressBar"></span></div>
+          <div class="counter"><span id="stepIndex">1</span>/<span id="stepTotal">9</span></div>
+        </div>
+
+        <article class="step-card">
+          <header>
+            <h3 id="stepTitle"></h3>
+          </header>
+          <div class="step-body">
+            <p id="stepDesc"></p>
+            <ul id="stepLinks" class="links"></ul>
+
+            <figure class="step-visual" id="stepVisual" hidden>
+              <img id="stepImg" alt="Captura del paso" />
+            </figure>
+
+            <div class="alert" id="stepAlert" hidden>
+              <strong>⚠ Aviso importante:</strong>
+              La primera vez que ejecutes el script, Google puede pedir permisos. Usa
+              <span class="hl">'Configuración avanzada'</span> y luego
+              <span class="hl">'Permitir'</span>.
+            </div>
+          </div>
+          <footer class="step-actions">
+            <button id="prevStep" class="ghost">Anterior</button>
+            <button id="nextStep" class="primary">Siguiente</button>
+          </footer>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

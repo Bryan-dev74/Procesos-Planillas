@@ -38,7 +38,7 @@
     },
     {
       title: "Paso 8: Preparar la Hoja de Cálculo",
-    desc: "En la hoja 'Procesar Top 20', limpia 'P1' y borra desde 'A2:B2' en 'Historial'.",
+    desc: "En la hoja 'Procesar Top 20', limpia 'P1' y borra desde 'A2:B2' tambien borra los datos en la hoja 'Historial'.",
       links: []
     },
     {
@@ -141,3 +141,4 @@
   // Init
   go(0);
 })();
+

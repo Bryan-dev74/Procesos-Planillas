@@ -1,0 +1,115 @@
+:root{
+  --bg:#0b0b0b;
+  --panel:#121212;
+  --text:#f5f5f5;
+  --muted:#9a9a9a;
+  --accent:#e50914;
+  --border:#1f1f1f;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#090909,#0f0f0f);
+  color:var(--text);
+  font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.2px;
+}
+
+/* Header */
+.app-header{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter: blur(6px);
+  background:rgba(10,10,10,.7);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;
+  padding:14px 20px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px var(--accent)}
+.brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.5px}
+
+/* Layout */
+.app-shell{display:grid;grid-template-columns:280px 1fr;gap:18px;max-width:1200px;margin:24px auto;padding:0 16px}
+.sidebar{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:16px; height:fit-content;
+}
+.sidebar h2{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.8px}
+#processList{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#processList li{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 12px;border:1px solid var(--border);border-radius:12px;
+  background:#0f0f0f;cursor:default;user-select:none;
+}
+#processList li .process-name{font-weight:600}
+
+.tips{margin-top:18px;border-top:1px dashed var(--border);padding-top:12px}
+.tips h3{margin:0 0 10px;font-size:13px;color:var(--muted);font-weight:600}
+.tips ul{margin:0;padding-left:16px;color:var(--muted)}
+.tips kbd{background:#121212;border:1px solid var(--border);border-bottom-color:#000;padding:2px 6px;border-radius:6px}
+
+/* Cards + buttons */
+.content{display:grid;gap:18px}
+.intro-card,.step-card{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:20px;
+}
+.intro-card h2{margin:0 0 6px}
+.cta-row{display:flex;gap:10px;margin-top:12px}
+.primary{
+  background:var(--accent);border:1px solid #6b0005;color:white;
+  padding:10px 16px;border-radius:12px;cursor:pointer;font-weight:700;letter-spacing:.3px;transition:.2s;
+}
+.primary:hover{filter:brightness(1.1);box-shadow:0 10px 22px rgba(229,9,20,.25)}
+.ghost{
+  background:transparent;border:1px solid var(--border);color:var(--text);
+  padding:10px 16px;border-radius:12px;cursor:pointer;transition:.2s;
+}
+.ghost:hover{border-color:var(--accent);box-shadow:0 0 0 3px rgba(229,9,20,.15)}
+
+/* Stepper */
+.stepper-progress{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.stepper-progress .bar{flex:1;height:8px;border-radius:999px;background:#0e0e0e;border:1px solid var(--border);overflow:hidden}
+.stepper-progress .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#ff3d2e);width:0%}
+.stepper-progress .counter{font-weight:700;color:var(--muted)}
+.step-card header h3{margin:0 0 8px}
+.step-body{color:#d9d9d9}
+.links{display:grid;gap:6px;margin:14px 0 0;padding:0;list-style:none}
+.links a{color:#fff;text-decoration:none;border:1px solid var(--border);padding:8px 10px;border-radius:10px;display:inline-block;background:#0f0f0f}
+.links a:hover{border-color:var(--accent)}
+
+/* Step image */
+.step-visual{
+  margin-top:16px;
+  display:flex;flex-direction:column;gap:8px;
+  border:1px solid var(--border);border-radius:12px;padding:10px;background:#0c0c0c;
+}
+.step-visual img{
+  width:100%;height:auto;max-height:60vh;object-fit:contain;border-radius:10px;border:1px solid var(--border);
+}
+
+/* Alert (only step 9) */
+.alert{
+  margin-top:16px;padding:12px;border-radius:8px;
+  background:#2b0000;color:#fff;border:1px solid #ff4d4d;
+}
+
+/* Highlight animation (only text color) */
+.hl, .highlight, .code-tip{
+  animation: highlightPulse 2.2s ease-in-out infinite;
+}
+@keyframes highlightPulse{
+  0% { color: #fff; }
+  50% { color: var(--accent); }
+  100% { color: #fff; }
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .app-shell{grid-template-columns:1fr}
+}

@@ -7,47 +7,57 @@
       {
         title: "Paso 1: Instalar WinRAR",
         desc: "Ve a la página oficial de descargas, instala y abre 'WinRAR' para confirmar que quedó instalado.",
-        links: [{ label: "Descargar WinRAR", href: "https://winrar.es/descargas" }]
+  links: [{ label: "Descargar WinRAR", href: "https://winrar.es/descargas" }],
+  img: "top20-paso1.png"
       },
       {
         title: "Paso 2: Descargar los Archivos de Atendentes",
         desc: "Descarga los archivos de cada atendente y guárdalos en 'Descargas' sin renombrar.",
-        links: []
+  links: [],
+  img: "top20-paso2.png"
       },
       {
         title: "Paso 3: Crear una Carpeta Nueva",
         desc: "En 'Descargas', crea una nueva carpeta llamada 'Top20'.",
-        links: []
+  links: [],
+  img: "top20-paso3.png"
       },
       {
         title: "Paso 4: Mover los Archivos",
         desc: "Mueve todos los '.zip' descargados dentro de la carpeta 'Top20'.",
-        links: []
+  links: [],
+  img: "top20-paso4.png"
       },
       {
         title: "Paso 5: Extraer los Archivos",
         desc: "Dentro de 'Top20', selecciona los '.zip' > clic derecho > 'WinRAR' > 'Extraer aquí'.",
-        links: []
+  links: [],
+  img: "top20-paso5.png"
       },
       {
         title: "Paso 6: Resultado de la Extracción",
         desc: "La carpeta 'Top20' tendrá los '.zip' originales y los archivos de Excel extraídos.",
-        links: []
+  links: [],
+  img: "top20-paso6.png"
       },
       {
         title: "Paso 7: Subir a Google Drive",
         desc: "Sube los archivos de Excel a la carpeta 'Procesamiento' en Google Drive. Después de subir los archivos, borra la carpeta llamada 'Listo' que está en ese mismo Drive.",
-        links: [{ label: "Carpeta de Procesamiento (Drive)", href: "https://drive.google.com/drive/folders/1y4mIhIpoTxMXZOsJ7IvTKFnNRZtwI_tG?usp=sharing" }]
+  links: [{ label: "Carpeta de Procesamiento (Drive)", href: "https://drive.google.com/drive/folders/1y4mIhIpoTxMXZOsJ7IvTKFnNRZtwI_tG?usp=sharing" }],
+  img: "top20-paso7.png"
       },
       {
         title: "Paso 8: Preparar la Hoja de Cálculo",
         desc: "En la hoja 'Procesar Top 20', limpia 'P1' y borra desde 'A2:B2' tambien los datos en la 'Historial'.",
-        links: []
+  links: [],
+  links: [],
+  img: "top20-paso6.png"
       },
       {
         title: "Paso 9: Ejecutar el Script",
         desc: "En la hoja, ve a 'Extensiones' > 'Apps Script' y presiona 'Ejecutar'.",
-        links: []
+  links: [],
+  img: "top20-paso9.png"
       }
     ],
     online30m: [
@@ -185,10 +195,11 @@
     
     // Image(s)
     if(step.img) {
+      let imgFolder = currentProcess === 'top20' ? 'top20' : 'online30m';
       if(Array.isArray(step.img)) {
-        stepVisual.innerHTML = step.img.map(imgName => `<img src="assets/online30m/${imgName}" alt="Captura del paso" style="max-width:90vw;max-height:90vh;border-radius:16px;box-shadow:0 0 40px #000;margin-bottom:10px;">`).join("");
+        stepVisual.innerHTML = step.img.map(imgName => `<img src="assets/${imgFolder}/${imgName}" alt="Captura del paso" style="max-width:90vw;max-height:90vh;border-radius:16px;box-shadow:0 0 40px #000;margin-bottom:10px;">`).join("");
       } else {
-        stepImg.src = `assets/online30m/${step.img}`;
+        stepImg.src = `assets/${imgFolder}/${step.img}`;
         stepVisual.innerHTML = stepImg.outerHTML;
       }
       stepVisual.hidden = false;
